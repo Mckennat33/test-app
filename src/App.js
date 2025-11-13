@@ -34,9 +34,14 @@ const objectOfArrays = {
 function App() {
   const [ search, setSearch ] = useState('')
   
-  const filteredSearch = array.filter((fruit) => {
-    const searchFruit = fruit.toLowerCase().includes(search.toLocaleLowerCase())
-    return searchFruit
+  const filteredSearch = arrayObject.filter((name) => {
+    console.log(name)
+    const n = name.name 
+    
+    // return fruit.toLowerCase().includes(search.toLocaleLowerCase())
+    // const n = name.toLowerCase().includes(search.toLocaleLowerCase())
+
+
   })
 
   // console.log(filteredSearch)
@@ -47,19 +52,23 @@ function App() {
         <input 
           type='text' 
           className='input'
-          onSubmit={(e) => setSearch(e.target.value)}
+          onChange={(e) => setSearch(e.target.value)}
           placeholder='Search...'
         />
       </>
       <Home className='Home'>
         <h1>Test App</h1>
-        {/* {filteredSearch.map((e) => {
-          <p>{e}</p>
-        })} */}
-        <p>{filteredSearch}</p>
+        <p>
+          {/* This is displaying all the items when we arent searching anything */}
+          {filteredSearch}
+        </p>
       </Home>
     </div>
   );
 }
+
+
+// Problem - displaying all the items in the array instead of just the one
+// 
 
 export default App;
