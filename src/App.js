@@ -35,13 +35,8 @@ function App() {
   const [ search, setSearch ] = useState('')
   
   const filteredSearch = arrayObject.filter((name) => {
-    console.log(name)
-    const n = name.name 
+    return name.name.toLowerCase().includes(search.toLocaleLowerCase())
     
-    // return fruit.toLowerCase().includes(search.toLocaleLowerCase())
-    // const n = name.toLowerCase().includes(search.toLocaleLowerCase())
-
-
   })
 
   // console.log(filteredSearch)
@@ -60,9 +55,13 @@ function App() {
         <h1>Test App</h1>
         <p>
           {/* This is displaying all the items when we arent searching anything */}
-          {filteredSearch}
+          {/* {console.log(typeof(filteredSearch))} */}
+          {filteredSearch.map((names) => {
+            <p>{names.name}</p>
+          })}
+          {/* {Object.values(filteredSearch)} */}
         </p>
-      </Home>
+          </Home>
     </div>
   );
 }
