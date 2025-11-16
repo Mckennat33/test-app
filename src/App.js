@@ -4,6 +4,15 @@ import Home from './components/Home'
 import React from 'react'
 import { useEffect, useState } from 'react';
 
+// previous state
+// props spreading
+// children
+// search feature
+// manipulating objects and arrays
+// button size prop - scrimba video - Advanced react 
+// rewatch menu component intro 
+// prop drilling 
+  // compound components - to avoid prop drilling 
 
 const object = {
   name: "Thomas",
@@ -34,12 +43,15 @@ const objectOfArrays = {
 function App() {
   const [ search, setSearch ] = useState('')
   
-  const filteredSearch = arrayObject.filter((name) => {
-    return name.name.toLowerCase().includes(search.toLocaleLowerCase())
-    
+  // const filteredSearch = arrayObject.filter((users) => {
+  //   return users.name.toLowerCase().includes(search.toLocaleLowerCase()) || users.lastName.toLowerCase().includes(search.toLocaleLowerCase())
+  // })
+
+  const filteredSearch = array.filter((fruit) => {
+    return fruit.toLocaleLowerCase().includes(search.toLocaleLowerCase())
   })
 
-  // console.log(filteredSearch)
+
 
   return (
     <div className="App">
@@ -53,14 +65,20 @@ function App() {
       </>
       <Home className='Home'>
         <h1>Test App</h1>
-        <p>
+        
           {/* This is displaying all the items when we arent searching anything */}
           {/* {console.log(typeof(filteredSearch))} */}
-          {filteredSearch.map((names) => {
-            <p>{names.name}</p>
+          {filteredSearch.map((user) => {
+            return (
+              <>
+                {/* <p> {`${user.name} ${user.lastName}`} </p> */}
+                <p> {user} </p>
+              </>
+            )
+             
           })}
           {/* {Object.values(filteredSearch)} */}
-        </p>
+        
           </Home>
     </div>
   );
