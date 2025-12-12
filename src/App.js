@@ -3,6 +3,7 @@ import './App.css';
 import Home from './components/Home'
 import React from 'react'
 import { useEffect, useState } from 'react';
+import { BrowserRouter } from "react-router-dom"
 
 // previous state
 // props spreading
@@ -89,3 +90,4 @@ function App() {
 // 
 
 export default App;
+
